@@ -1,0 +1,2 @@
+class PostTage < ApplicationRecord
+end
