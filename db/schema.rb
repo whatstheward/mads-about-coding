@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 2020_09_30_161333) do
   enable_extension "plpgsql"
 
   create_table "post_tags", force: :cascade do |t|
-    t.bigint "posts_id"
-    t.bigint "tags_id"
+    t.bigint "post_id"
+    t.bigint "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["posts_id"], name: "index_post_tags_on_posts_id"
-    t.index ["tags_id"], name: "index_post_tags_on_tags_id"
+    t.index ["post_id"], name: "index_post_tags_on_post_id"
+    t.index ["tag_id"], name: "index_post_tags_on_tag_id"
   end
 
   create_table "posts", force: :cascade do |t|
