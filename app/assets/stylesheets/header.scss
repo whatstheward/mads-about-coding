@@ -1,0 +1,13 @@
+$font: 'Poiret One', cursive;
+
+#heading-logo {
+    font-family: $font;
+    width: fit-content;
+    margin-right: 0;
+}
+
+#search-bar {
+    float: right;
+    width: 20%;
+    display: flex;
+}
