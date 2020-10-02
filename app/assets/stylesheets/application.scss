@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+ 
+$font: 'Poiret One', cursive;
+$neutral: #F4F1DE;
+$highlight: #F2CC8F;
+$shadow: #3D405B;
+$soothing: #81B29A;
+$important: #E07A5F;
+
+body {
+    width: 100%;
+    background-color: #F4F1DE;
+}
