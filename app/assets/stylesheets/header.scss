@@ -6,9 +6,13 @@ $soothing: #81B29A;
 $important: #E07A5F;
 
 #heading-logo {
-    font-family: $font;
-    color: $shadow;
-    // width: fit-content;
+    a{
+        font-family: $font;
+        color: $shadow;
+    }
+    a:hover{
+        text-decoration: none;
+    }
 }
 
 

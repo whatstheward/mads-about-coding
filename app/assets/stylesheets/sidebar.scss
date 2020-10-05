@@ -3,7 +3,40 @@
 }
 
 .sidebar {
-    height: 100vh;
-    overflow: scroll;
+    height: 100%;
+    overflow: hidden;
     justify-content: center;
+}
+
+#sidebar-posts{
+    height: 50vh;
+    overflow: scroll;
+    a {
+        color: #3D405B;
+        
+    }
+    a:hover {
+        color: #81B29A;
+    }
+}
+
+#sidebar-tags{
+    height: 25vh;
+    overflow: scroll;
+    justify-content: space-around;
+    margin: 10% 0;
+    span {
+        background-color: #81B29A;
+        color: #F2CC8F;
+        span{
+            background-color: white;
+            margin: 5%;
+        }
+    }
+    span:hover{
+        background-color: #E07A5F;
+        color: #F4F1DE;
+        cursor: pointer;
+    }
+
 }

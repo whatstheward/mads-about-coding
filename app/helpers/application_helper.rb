@@ -4,4 +4,8 @@ module ApplicationHelper
         Post.all
     end
 
+    def get_tags
+        Tag.tag_counts
+    end
+
 end
