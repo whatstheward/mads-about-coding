@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
   scope 'posts' do
     post '/filter', to: 'posts#filter', as: 'filter'
+    post '/search', to: 'posts#search', as: 'search'
   end
     resources :posts, only: [:index, :show]
 end
