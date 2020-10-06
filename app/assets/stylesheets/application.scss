@@ -25,3 +25,17 @@ body {
     width: 100%;
     background-color: #F4F1DE;
 }
+
+#posts-list {
+    width: 100%;
+    height: 100vh;
+    .card {
+        background-color: transparent;
+        border-left: none;
+        border-right: none;
+    }
+    ul {
+        list-style:none;
+    }
+}
+
