@@ -1,0 +1,19 @@
+<form>
+    <div id="search-bar" class="form-group">
+        <input type="search" class="form-control">
+    </div>
+</form>
+<div id="sidebar-posts">
+    <ul>
+    <% @posts.each do |post|  %>
+        <li>
+            <%= link_to post.title, post_path(post.id) %>
+        </li>
+    <% end %>
+    </ul>
+</div>
+<div class="container" id="sidebar-tags">
+    <% @tags.each do |tag, count|  %>
+        <span class="badge badge-pill"><%= tag %><span class="badge badge-light"><%= count %></span></span>
+    <% end %>
+</div>

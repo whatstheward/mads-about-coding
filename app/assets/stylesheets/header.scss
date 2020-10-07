@@ -1,0 +1,28 @@
+$font: 'Poiret One', cursive;
+$neutral: #F4F1DE;
+$highlight: #F2CC8F;
+$shadow: #3D405B;
+$soothing: #81B29A;
+$important: #E07A5F;
+
+#heading-logo {
+    a{
+        font-family: $font;
+        color: $shadow;
+    }
+    a:hover{
+        text-decoration: none;
+    }
+}
+
+
+#header-bar {
+    width: 100%;
+    background-color: $important;
+    position: sticky;
+}
+
+#header-bar > .row {
+    padding: 20px 20px 0px;
+}
+
