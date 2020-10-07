@@ -47,6 +47,7 @@ GEM
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    bcrypt (3.1.15)
     bindex (0.8.1)
     bootsnap (1.4.8)
       msgpack (~> 1.0)
@@ -73,6 +74,10 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
+    dotenv (2.7.5)
+    dotenv-rails (2.7.5)
+      dotenv (= 2.7.5)
+      railties (>= 3.2, < 6.1)
     erubi (1.9.0)
     execjs (2.7.0)
     faker (2.10.2)
@@ -85,6 +90,7 @@ GEM
     io-like (0.3.1)
     jbuilder (2.10.1)
       activesupport (>= 5.0.0)
+    jwt (2.2.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -192,13 +198,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  dotenv-rails
   faker
   jbuilder (~> 2.5)
+  jwt
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
