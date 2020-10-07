@@ -1,5 +1,31 @@
 <% content_for :main do %>
+  <div class="container"  id="posts-list">
+    <ul>
     <% @posts.each do |post| %>
-        <h1><%= post.title %></h1>
+        <li>
+            <div class="card">
+                <h3 class="card-title"><%= link_to  post.title, post_path(post) %></h3>
+                <p><%= post.updated_at.strftime("Posted %m/%d/%Y")%></p>
+            </div>
+        </li>
     <% end %>
+    </ul>
+    <nav>
+      <ul class="pagination justify-content-center">
+          <% if @current > 1 %>
+            <li class="page-item">
+              <%= link_to  "<<", posts_path(page: @current-1), class:'page-link' %>
+            </li>
+          <% end %>
+          <% (0...@page_count).each do |i| %>
+            <li class="page-item"><%= link_to i+1, posts_path(page: i+1), class: 'page-link' %></li>
+          <% end %>
+          <% if @current < @page_count %>
+            <li>
+              <%= link_to  ">>", posts_path(page:@current+1), class:'page-link' %>
+            </li>
+          <% end %>
+      </ul>
+    </nav>
+  </div>
 <% end %>
