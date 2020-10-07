@@ -6,7 +6,9 @@ class Tag < ApplicationRecord
     def self.tag_counts
         tagMap = Hash.new(0)
         Tag.all.each do |tag|
-            tagMap[tag.name] ? tagMap[tag.name] += 1 : tagMap[tag.name] = 1
+            if tag.posts.length > 0 
+                tagMap[tag.name] ? tagMap[tag.name] += 1 : tagMap[tag.name] = 1
+            end
         end
         tagMap
     end
