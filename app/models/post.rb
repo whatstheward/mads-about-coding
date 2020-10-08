@@ -9,4 +9,15 @@ class Post < ApplicationRecord
         end
     end
 
+    def add_tags(tag_str)
+        tag_arr = tag_str.split(',')
+        tag_arr.each do |name|
+            tag = Tag.find_by(name: name.strip)
+            if !tag
+                tag = Tag.create(name: name.strip)
+            end
+            PostTag.create(post: self, tag: tag)
+        end
+    end
+
 end

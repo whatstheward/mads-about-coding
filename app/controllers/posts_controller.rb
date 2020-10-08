@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
     skip_before_action :verify_authenticity_token
+    before_action :authenticate, only: [:new]
 
     def index
         @current = params[:page].to_i
@@ -19,13 +20,28 @@ class PostsController < ApplicationController
         redirect_to posts_path(ids:@posts.ids, page: 1)
     end
 
-    def search
-    end
-
     def show
         @post = Post.find(params[:id])
     end
 
+    def new 
+        @post = Post.new
+    end
+
+    def create
+        @post = Post.new(post_params)
+        if @post.save
+            @post.add_tags(params[:post][:tags])
+            redirect_to posts_path
+        else
+            render :new
+        end
+    end
+
     private
+
+    def post_params
+        params.require(:post).permit(:title, :body)
+    end
 
 end
