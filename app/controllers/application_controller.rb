@@ -4,4 +4,8 @@ class ApplicationController < ActionController::Base
         redirect_to posts_path(page: 1)
     end
 
+    def authenticate
+        session[:id].present?
+    end
+
 end
