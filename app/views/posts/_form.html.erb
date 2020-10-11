@@ -1,0 +1,8 @@
+<div class='form-group'>
+    <%= form_with model: [:admin, @post] do |f|%>
+        <%= f.text_field :title, class:'form-control', id: 'new-post-title' %>
+        <%= f.text_area :body, rows: 10,class:'form-control', id: 'new-post-body' %>
+        <%= f.text_field :tag_list, class: 'form-control', id: 'new-post-tags' %>
+        <%= f.submit "Post" %>
+    <% end %>
+</div>

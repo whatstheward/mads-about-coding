@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
     skip_before_action :verify_authenticity_token
-    before_action :authenticate, only: [:new]
+    before_action :authenticate, only: [:new, :create, :edit, :update, :delete]
 
     def index
         @current = params[:page].to_i
@@ -31,11 +31,22 @@ class PostsController < ApplicationController
     def create
         @post = Post.new(post_params)
         if @post.save
-            @post.add_tags(params[:post][:tags])
+            @post.add_tags(params[:post][:tag_list])
             redirect_to posts_path
         else
             render :new
         end
+    end
+
+    def edit
+        @post = Post.find_by!(id: params[:id])
+        @tag_list = @post.tag_str
+    end
+
+    def update
+        @post = Post.find_by!(id: params[:id])
+        @post.update(post_params)
+        redirect_to post_path(@post)
     end
 
     private

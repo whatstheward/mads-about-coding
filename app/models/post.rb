@@ -20,4 +20,14 @@ class Post < ApplicationRecord
         end
     end
 
+    def tag_str
+        self.tags.reduce('') do |a,b|
+            if a.length < 1
+                a + b.name
+            else
+                a + ', ' + b.name
+            end
+        end
+    end
+
 end
