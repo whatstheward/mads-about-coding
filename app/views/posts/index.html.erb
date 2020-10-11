@@ -6,6 +6,9 @@
             <div class="card">
                 <h3 class="card-title"><%= link_to  post.title, post_path(post) %></h3>
                 <p><%= post.updated_at.strftime("Posted %m/%d/%Y")%></p>
+                <% if session[:id].present? %>
+                  <%= button_to "Edit Post", edit_admin_post_path(post), method: :get %>
+                <% end %>
             </div>
         </li>
     <% end %>

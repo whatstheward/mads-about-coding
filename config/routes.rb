@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/admin', to: 'admin#login'
   post '/admin', to: 'admin#create', as: 'create_session'
   scope 'admin', as: 'admin' do
-    resources :posts, only: [:new, :edit, :create, :update, :delete]
+    resources :posts, only: [:new, :edit, :create, :update, :destroy]
   end
   scope 'posts' do
     post '/filter', to: 'posts#filter', as: 'filter'
