@@ -8,4 +8,8 @@ module ApplicationHelper
         Tag.tag_counts
     end
 
+    def get_token
+        session[:id]
+    end
+
 end
