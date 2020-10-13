@@ -6,9 +6,11 @@ class AdminController < ApplicationController
         
     end
 
-    def create 
-        if params[:password] == ENV['HANDSHAKE']
-            @token = give_token
+    def create
+        @admin = Admin.find_by!(name: params[:name]) 
+        byebug
+        if @admin.authenticate(params[:password])
+            @token = give_token(@admin.name)
             session[:id] = @token 
             redirect_to new_admin_post_path
         else

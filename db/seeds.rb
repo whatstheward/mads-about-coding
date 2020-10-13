@@ -6,7 +6,5 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-10.times do Post.create({title: Faker::Book.title, body: Faker::Lorem.paragraphs(number: 3, supplemental: true) }) end
-20.times do Tag.create({name: Faker::Verb.base }) end
 
 Post.all.each{|post| PostTag.create({post_id: Post.all.sample.id, tag_id: Tag.all.sample.id})}
