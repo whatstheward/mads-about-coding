@@ -6,5 +6,6 @@
         <%= f.text_field :tag_list, value: @tag_list, class: 'form-control', id: 'new-post-tags' %>
         <%= f.submit "Post" %>
     <% end %>
-</div>
+    </div>
+    <%= button_to 'Delete Post?', admin_post_path(@post), methiod: :delete, data: {confirm: 'Are you sure?'} %>
 <% end %>
