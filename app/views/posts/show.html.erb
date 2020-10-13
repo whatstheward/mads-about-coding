@@ -5,9 +5,9 @@
         <%= sanitize @post.body %>
     </p>
 
-    <div id="post-tag">
+    <div>
     <% @post.tags.each do |tag| %>
-        <span class="badge badge-pill"><%= link_to tag.name, posts_path(page: 1, q: tag.name) %></span>
+        <%= link_to tag.name, posts_path(page: 1, q: tag.name), id: 'post-tag' %>
     <% end %>
     </div>
 <% end %>

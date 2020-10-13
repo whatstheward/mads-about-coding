@@ -24,32 +24,29 @@
     }
 }
 
-#post-tag{
+#tag-div {
     height: 25vh;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
     overflow: scroll;
-    justify-content: space-around;
-    margin: 10% 0;
-    span {
-        text-align: center;
-        background-color: #81B29A;
-        height: 2em !important;
-        justify-content: center;
-        span{  
-            background-color: white;
-            height: fit-content !important;
-            margin: 5%;
-        }
-        a{
-            color: #F2CC8F;
-        }
-        a:hover{
-            color: #F4F1DE;
-            text-decoration: none;
-        }
-    }
-    span:hover{
-        background-color: #E07A5F;
-        cursor: pointer;
-    }
+    align-content: center;
+}
 
+#post-tag{
+    height: 2em;
+    width: fit-content;
+    margin: 5px 2px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #81B29A;
+    color: #F2CC8F;
+}
+
+#post-tag:hover{
+    color: #F4F1DE;
+    text-decoration: none;
+    background-color: #E07A5F;
+    cursor: pointer;
 }
