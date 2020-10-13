@@ -8,7 +8,6 @@ class AdminController < ApplicationController
 
     def create
         @admin = Admin.find_by!(name: params[:name]) 
-        byebug
         if @admin.authenticate(params[:password])
             @token = give_token(@admin.name)
             session[:id] = @token 
