@@ -30,9 +30,13 @@
     justify-content: space-around;
     margin: 10% 0;
     span {
+        text-align: center;
         background-color: #81B29A;
+        height: 2em !important;
+        justify-content: center;
         span{  
             background-color: white;
+            height: fit-content !important;
             margin: 5%;
         }
         a{
