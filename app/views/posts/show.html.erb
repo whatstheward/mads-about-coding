@@ -2,7 +2,7 @@
     <h1><%= @post.title %></h1>
         <br/>
     <p>
-        <%= @post.body %>
+        <%= sanitize @post.body %>
     </p>
 
     <div id="post-tag">
