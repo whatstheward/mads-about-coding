@@ -13,8 +13,8 @@
     <% end %>
     </ul>
 </div>
-<div class="container" id="sidebar-tags">
+<div class="container" id="post-tag">
     <% @tags.each do |tag, count|  %>
-        <span class="badge badge-pill"><%= link_to tag, filter_path(q: tag), method: :post %><span class="badge badge-light"><%= count %></span></span>
+        <span class="badge badge-pill"><%= link_to tag, posts_path(page: 1, q: tag) %><span class="badge badge-light"><%= count %></span></span>
     <% end %>
 </div>

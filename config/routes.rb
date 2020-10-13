@@ -6,9 +6,5 @@ Rails.application.routes.draw do
   scope 'admin', as: 'admin' do
     resources :posts, only: [:new, :edit, :create, :update, :destroy]
   end
-  scope 'posts' do
-    post '/filter', to: 'posts#filter', as: 'filter'
-    post '/search', to: 'posts#search', as: 'search'
-  end
     resources :posts, only: [:index, :show]
 end

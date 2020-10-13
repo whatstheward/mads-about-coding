@@ -5,7 +5,9 @@
         <%= @post.body %>
     </p>
 
+    <div id="post-tag">
     <% @post.tags.each do |tag| %>
-        <span class="post_tag"> <%= tag.name %></span>
+        <span class="badge badge-pill"><%= link_to tag.name, posts_path(page: 1, q: tag.name) %></span>
     <% end %>
+    </div>
 <% end %>
