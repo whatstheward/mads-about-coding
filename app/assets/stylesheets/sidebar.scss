@@ -14,7 +14,10 @@
 
 #sidebar-posts{
     height: 50vh;
+    border-radius: 5% 5% 0 0;
+    background-color: transparentize($color: #F2CC8F, $amount: .6);
     overflow: scroll;
+    margin-bottom: 5px;
     a {
         color: #3D405B;
         
@@ -22,11 +25,17 @@
     a:hover {
         color: #81B29A;
     }
+    li{
+        list-style: none;
+    }
 }
 
 #tag-div {
     height: 25vh;
+    background-color: transparentize($color: #F2CC8F, $amount: .6);
     width: 100%;
+    border-radius: 0 0 5% 5%;
+    margin-top: 5px;
     display: flex;
     flex-flow: row wrap;
     justify-content: start;

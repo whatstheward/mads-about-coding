@@ -1,7 +1,6 @@
 <% content_for :main do %>
-    <div>
     <h1><%= @post.title %></h1>
-        <br/>
+    <div class='post-cont'>
     <p>
         <%= sanitize @post.body %>
     </p>
