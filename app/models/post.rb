@@ -17,7 +17,9 @@ class Post < ApplicationRecord
             if !tag
                 tag = Tag.create(name: name.strip)
             end
-            PostTag.create(post: self, tag: tag)
+            if !self.tags.include?(tag)
+                PostTag.create(post: self, tag: tag)
+            end
         end
     end
 

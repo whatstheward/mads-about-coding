@@ -39,6 +39,7 @@ class PostsController < ApplicationController
     def update
         @post = Post.find_by!(id: params[:id])
         @post.update(post_params)
+        @post.add_tags(params[:post][:tag_list])
         redirect_to post_path(@post)
     end
 
